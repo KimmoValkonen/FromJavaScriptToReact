@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From JavaScript to React</title>
+  </head>
+  <body>
+    <!-- EXAMPLE of Declarative React code -->
+    <!-- See index-1.html for Imperative JavaScript code-->
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- <h1> ei toimi ilman Babel ja type=jsx määritystä -->
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      const app = document.getElementById("app")
+
+      function Header() {
+        return <h1>Develop. Preview. Ship. 🚀</h1>
+      }
+
+      function HomePage() {
+        return (
+          <div>
+            {/* Nesting the Header component */}
+            <Header />
+          </div>
+        )
+      }
+      
+      ReactDOM.render(<Header />, app)
+    </script>
+  </body>
+</html>
+
